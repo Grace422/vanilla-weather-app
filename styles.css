@@ -5,12 +5,10 @@ body{
 small a{
     text-decoration: none;
 }
-ul li{
-    list-style-type: none;
-}
 #search{
-    padding: 5px;
-    margin: 20px;
+    padding: 5px 0 5px 0;
+    width: 70%;
+    margin: 10px;
 }
 #temp{
     font-size: 50px;
@@ -19,6 +17,7 @@ ul li{
 #cel{
     position: relative;
     top: -23px;
+    color: blue;
 }
 #fran{
     position: relative;
@@ -34,8 +33,25 @@ em{
 }
 #city{
     font-weight: bold;
+    color: #878787;
+    margin-bottom: 0;
+    margin-left: 30px;
 }
 .box{
+    padding: 20px;
     border: 1px solid black;
     border-radius: 8px;
+}
+.wrapper{
+    max-width: 500px;
+    margin: 50px auto;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
