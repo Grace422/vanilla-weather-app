@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-primary">Search</button>
+            <h1 id="city">
+                New York
+            </h1>
+            <ul>
+                <li id="date">Monday 20:12</li>
+                <li id="description">Sunny</li>
+            </ul>
+            <div class="row">
+                <div class="col-6">
+                     <p> 
+                        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="sun" class="icon">
+                        <span id="temp">21</span> <span id="cel">°C</span> <em>|</em> <span id="fran">°F</span>
+                    </p>
+                </div>
+            <div class="col-6">
+                <ul>
+                    <li>Precipitation: <span id="prep">18%</span></li>
+                    <li>Humidity: <span id="humid">20%</span></li>
+                    <li>Wind: <span id="wind">10</span>km/h</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <small>
+            <a href="https://github.com/Grace422">Github Source Code</a>
+            , by Kwaham Grace
+        </small>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

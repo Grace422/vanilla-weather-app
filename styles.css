@@ -1,0 +1,41 @@
+body{
+    font-family: arial;
+    opacity: 0.7;
+}
+small a{
+    text-decoration: none;
+}
+ul li{
+    list-style-type: none;
+}
+#search{
+    padding: 5px;
+    margin: 20px;
+}
+#temp{
+    font-size: 50px;
+    font-weight: bold;
+}
+#cel{
+    position: relative;
+    top: -23px;
+}
+#fran{
+    position: relative;
+    top: -23px;
+}
+em{
+    position: relative;
+    top: -23px;
+}
+.icon{
+    position: relative;
+    top: -5px;
+}
+#city{
+    font-weight: bold;
+}
+.box{
+    border: 1px solid black;
+    border-radius: 8px;
+}
