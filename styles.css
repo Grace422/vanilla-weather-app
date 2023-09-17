@@ -10,7 +10,7 @@ small a{
     margin: 10px;
 }
 #temp{
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
 }
 #cel{
@@ -42,7 +42,7 @@ em{
     border-radius: 8px;
 }
 .wrapper{
-    max-width: 500px;
+    max-width: 600px;
     margin: 50px auto;
 }
 ul{
