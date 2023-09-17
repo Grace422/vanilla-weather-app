@@ -14,15 +14,16 @@ function showCity(response){
     let description = document.querySelector('#description')
     description.innerHTML = `${response.data.weather[0].description}`
     let precipitation = document.querySelector('#prep');
-    precipitation.innerHTML = `${response.data.main.pressure}`;
+    precipitation.innerHTML = Math.round(`${response.data.main.pressure}`);
     let humidity = document.querySelector('#humid');
-    humidity.innerHTML = `${response.data.main.humidity}`;
+    humidity.innerHTML = Math.round(`${response.data.main.humidity}`);
     let wind = document.querySelector('#wind');
-    wind.innerHTML = `${response.data.wind.speed}`;
+    wind.innerHTML = Math.round(`${response.data.wind.speed}`);
     let temperature = document.querySelector("#temp");
     temperature.innerHTML = `${response.data.main.temp}`;
-    let iconElement = document.querySelector('icon');
+    let iconElement = document.querySelector('#icon');
     iconElement.setAttribute("src",  `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
     console.log(response.data);
 }
 
@@ -31,8 +32,11 @@ function searchCity(city){
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metrics`;
     axios.get(`${apiUrl}&appid=${apiKey}`).then(showCity);
 }
-
-function handleCity(){
+function handleCity(event){
+    event.preventDefault();
     let searchInput = document.querySelector('#search');
-    searchCity(searchInput);
+    searchCity(searchInput.value);
 }
+
+let button = document.querySelector('#submit');
+button.addEventListener("click", handleCity);
