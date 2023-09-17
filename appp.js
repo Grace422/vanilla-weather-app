@@ -1,12 +1,11 @@
-
 let now = new Date();
 
 const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-let days = daysOfWeek[now.getDay];
-let mins = now.getMinutes;
-let secs = now.getSeconds;
-let date = document.querySelector('#date');
-date.innerHTML = `${days} ${mins}:${secs}`;
+let jour = daysOfWeek[now.getDay()];
+let hours = now.getHours();
+let mins = now.getMinutes();
+let deta = document.querySelector('#date');
+deta.innerHTML = `${jour} ${hours}:${mins}`;
 
 
 function showCity(response){
