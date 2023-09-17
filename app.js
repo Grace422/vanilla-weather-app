@@ -21,6 +21,8 @@ function showCity(response){
     wind.innerHTML = `${response.data.wind.speed}`;
     let temperature = document.querySelector("#temp");
     temperature.innerHTML = `${response.data.main.temp}`;
+    let iconElement = document.querySelector('icon');
+    iconElement.setAttribute("src",  `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     console.log(response.data);
 }
 
