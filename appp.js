@@ -13,7 +13,15 @@ function showCity(response){
     let h1 = document.querySelector('#city');
     h1.innerHTML = `${response.data.name}`;
     let description = document.querySelector('#description')
-    description.innerHTML = `${response.data}`
+    description.innerHTML = `${response.data.weather[0].description}`
+    let precipitation = document.querySelector('#prep');
+    precipitation.innerHTML = `${response.data.main.pressure}`;
+    let humidity = document.querySelector('#humid');
+    humidity.innerHTML = `${response.data.main.humidity}`;
+    let wind = document.querySelector('#wind');
+    wind.innerHTML = `${response.data.wind.speed}`;
+    let temperature = document.querySelector("#temp");
+    temperature.innerHTML = `${response.data.main.temp}`;
     console.log(response.data);
 }
 
