@@ -24,8 +24,11 @@ function showCity(response){
     let iconElement = document.querySelector('#icon');
     iconElement.setAttribute("src",  `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+    celTemp = response.data.main.temp;
     console.log(response.data);
 }
+
+let celTemp = null;
 
 function searchCity(city){
     let apiKey = '8c48afa47a9a9c24f3500c7039d50aaa';
@@ -38,5 +41,23 @@ function handleCity(event){
     searchCity(searchInput.value);
 }
 
+function ShowFranTemp(event){
+    event.preventDefault();
+    let tempElement = document.querySelector('#temp');
+    let franTemperature = (celTemp * 9)/5 + 32;
+    tempElement.innerHTML = Math.round(franTemperature);
+}
+function ShowCelsiusTemp(event){
+    event.preventDefault();
+    let tempElement = document.querySelector('#temp');
+    tempElement.innerHTML = Math.round(celTemp);
+}
+
 let button = document.querySelector('#submit');
 button.addEventListener("click", handleCity);
+
+let fahen = document.querySelector('#fran');
+fahen.addEventListener("click", ShowFranTemp);
+
+let celsius = document.querySelector('#cel');
+celsius.addEventListener("click", ShowCelsiusTemp);

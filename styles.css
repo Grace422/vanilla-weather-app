@@ -16,7 +16,6 @@ small a{
 #cel{
     position: relative;
     top: -23px;
-    color: blue;
 }
 #fran{
     position: relative;
@@ -54,3 +53,12 @@ li{
     padding: 0;
     list-style-type: none;
 }
+.weather-temperature .active{
+    color: black;
+    cursor: default;
+    text-decoration: none;
+}
+.weather-temperature .active:hover{
+    text-decoration: none;
+}
+
