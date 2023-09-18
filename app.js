@@ -44,12 +44,18 @@ function handleCity(event){
 function ShowFranTemp(event){
     event.preventDefault();
     let tempElement = document.querySelector('#temp');
+    
+    celsius.classList.remove('active');
+    fahen.classList.add('active');
     let franTemperature = (celTemp * 9)/5 + 32;
     tempElement.innerHTML = Math.round(franTemperature);
 }
 function ShowCelsiusTemp(event){
     event.preventDefault();
     let tempElement = document.querySelector('#temp');
+
+    celsius.classList.add('active');
+    fahen.classList.remove('active');
     tempElement.innerHTML = Math.round(celTemp);
 }
 
