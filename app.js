@@ -8,7 +8,8 @@ let deta = document.querySelector('#date');
 deta.innerHTML = `${jour} ${hours}:${mins}`;
 
 
-function displayForecast(){
+function displayForecast(response){
+    console.log(response.data.daily);
     let forecastElement = document.querySelector('#forecast');
 
     let forecastHTML = `<div class="row">`;
@@ -34,6 +35,13 @@ function displayForecast(){
         forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates){
+    console.log(coordinates);
+    let apiKey = '97bed167ec49bff56e6c1b63daef9c86';
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
 
 function showCity(response){
     let h1 = document.querySelector('#city');
@@ -54,13 +62,18 @@ function showCity(response){
     
     celTemp = response.data.main.temp;
     console.log(response.data);
+
+    getForecast(response.data.coord);
+
 }
 
 let celTemp = null;
 
 displayForecast()
+
+
 function searchCity(city){
-    let apiKey = 'f12d5630fe5e4c8603f2dce6c3baef71';
+    let apiKey = '97bed167ec49bff56e6c1b63daef9c86';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
     axios.get(`${apiUrl}&appid=${apiKey}`).then(showCity);
 }
