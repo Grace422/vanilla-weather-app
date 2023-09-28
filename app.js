@@ -69,7 +69,6 @@ function showCity(response){
 
 let celTemp = null;
 
-displayForecast()
 
 
 function searchCity(city){
