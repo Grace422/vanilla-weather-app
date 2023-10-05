@@ -91,29 +91,17 @@ function handleCity(event){
     searchCity(searchInput.value);
 }
 
-function ShowFranTemp(event){
-    event.preventDefault();
-    let tempElement = document.querySelector('#temp');
-    
-    celsius.classList.remove('active');
-    fahen.classList.add('active');
-    let franTemperature = (celTemp * 9)/5 + 32;
-    tempElement.innerHTML = Math.round(franTemperature);
-}
-function ShowCelsiusTemp(event){
-    event.preventDefault();
-    let tempElement = document.querySelector('#temp');
-
-    celsius.classList.add('active');
-    fahen.classList.remove('active');
-    tempElement.innerHTML = Math.round(celTemp);
-}
-
 let button = document.querySelector('#submit');
 button.addEventListener("click", handleCity);
 
-let fahen = document.querySelector('#fran');
-fahen.addEventListener("click", ShowFranTemp);
 
-let celsius = document.querySelector('#cel');
-celsius.addEventListener("click", ShowCelsiusTemp);
+// create a new keyboard event and set the key to "Enter"
+const event = new KeyboardEvent('keydown', {
+    key: 'Enter',
+    code: 'Enter',
+    which: 13,
+    keyCode: 13,
+  });
+  
+  // dispatch the event on some DOM element
+  document.getElementById('submit').dispatchEvent(event);
