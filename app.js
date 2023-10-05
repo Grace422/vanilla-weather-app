@@ -76,10 +76,6 @@ function showCity(response){
 
 }
 
-let celTemp = null;
-
-
-
 function searchCity(city){
     let apiKey = '97bed167ec49bff56e6c1b63daef9c86';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
